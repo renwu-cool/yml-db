@@ -1,0 +1,31 @@
+{
+  "name": "yml-db",
+  "version": "0.0.7",
+  "repository": "https://gitee.com/renwu-cool/yml-db.git",
+  "author": "6du@protonmail.com",
+  "license": "MulanPSL-2.0",
+  "exports": {
+    ".": "./lib/index.js",
+    "./": "./lib/"
+  },
+  "dependencies": {
+    "fs-extra": "^9.0.1",
+    "js-yaml": "^3.14.0"
+  },
+  "devDependencies": {
+    "coffeescript": "^2.5.1"
+  },
+  "scripts": {
+    "prepare": "coffee --compile --output lib/ src/",
+    "dev": "npx ava --watch --verbose",
+    "test": "npx ava"
+  },
+  "ava": {
+    "extensions": [
+      "coffee"
+    ],
+    "require": [
+      "coffeescript/register"
+    ]
+  }
+}
