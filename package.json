@@ -1,6 +1,6 @@
 {
   "name": "yml-db",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "repository": "https://gitee.com/renwu-cool/yml-db.git",
   "author": "6du@protonmail.com",
   "license": "MulanPSL-2.0",
@@ -29,6 +29,6 @@
     ]
   },
   "config": {
-    "unsafe-perm":true
+    "unsafe-perm": true
   }
 }
