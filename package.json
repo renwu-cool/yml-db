@@ -16,7 +16,7 @@
     "coffeescript": "^2.5.1"
   },
   "scripts": {
-    "prepare": "coffee --compile --output lib/ src/",
+    "prepare": "npx coffee --compile --output lib/ src/",
     "dev": "npx ava --watch --verbose",
     "test": "npx ava"
   },
@@ -27,8 +27,5 @@
     "require": [
       "coffeescript/register"
     ]
-  },
-  "config": {
-    "unsafe-perm": true
   }
 }
