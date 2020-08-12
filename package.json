@@ -27,5 +27,8 @@
     "require": [
       "coffeescript/register"
     ]
+  },
+  "config": {
+    "unsafe-perm":true
   }
 }
