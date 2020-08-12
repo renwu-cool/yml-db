@@ -8,4 +8,4 @@ git commit -m $version
 npm set unsafe-perm true
 npm version patch
 npm publish
-
+sync
