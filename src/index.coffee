@@ -3,26 +3,38 @@ yaml = require 'js-yaml'
 
 class YamlDb
   constructor:(@file)->
-    if fs.existsSync @file
-      @dict = yaml.load(fs.readFileSync @file) or {}
-    else
-      @dict = {}
+    @dict = yaml.load(@yml()) or {}
 
   get:(key)->
     @dict[key]
 
+  yml:->
+    if fs.existsSync @file
+      fs.readFileSync @file
+    ""
+
   set:(key, val)->
-    exist = key of @dict
-    if exist
-      old = @dict[key]
-      if old != val
-        write = true
+    _set = (k,v)=>
+      exist = k of @dict
+      if exist
+        old = @dict[k]
+        if old != v
+          w = true
+      else
+        w = true
+      if w
+        @dict[k] = v
+      return (w or false)
+
+    if key.constructor == Object
+      write = false
+      for i, val of key
+        write |= _set(i,val)
     else
-      write = true
+      write = _set key,val
     if write
-      @dict[key] = val
       fs.outputFileSync @file, yaml.dump(@dict)
-    return false
+    return write
 
 module.exports = (file)->
   new YamlDb(file+".yml")
