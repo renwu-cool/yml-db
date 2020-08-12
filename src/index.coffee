@@ -9,8 +9,9 @@ class YamlDb
     @dict[key]
 
   yml:->
-    if fs.existsSync @file
-      fs.readFileSync @file
+    {file} = @
+    if fs.existsSync file
+      return fs.readFileSync file
     ""
 
   set:(key, val)->
