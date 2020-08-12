@@ -38,3 +38,10 @@ class YamlDb
 
 module.exports = (file)->
   new YamlDb(file+".yml")
+
+not module.parent and do =>
+  test = module.exports("/tmp/test")
+  test.set {
+    a:1
+    b:2
+  }
