@@ -1,6 +1,6 @@
 {
   "name": "yml-db",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "repository": "https://gitee.com/renwu-cool/yml-db.git",
   "author": "6du@protonmail.com",
   "license": "MulanPSL-2.0",
@@ -8,7 +8,9 @@
     ".": "./lib/index.js",
     "./": "./lib/"
   },
-  "files": ["/lib"],
+  "files": [
+    "/lib"
+  ],
   "dependencies": {
     "fs-extra": "^9.0.1",
     "js-yaml": "^3.14.0",
