@@ -8,6 +8,7 @@
     ".": "./lib/index.js",
     "./": "./lib/"
   },
+  "files": ["/lib"],
   "dependencies": {
     "fs-extra": "^9.0.1",
     "js-yaml": "^3.14.0",
