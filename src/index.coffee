@@ -1,5 +1,6 @@
-fs = require 'fs-extra'
-yaml = require 'js-yaml'
+import fs from 'fs-extra'
+import yaml from 'js-yaml'
+import isEqual from 'lodash/isEqual'
 
 class YamlDb
   constructor:(@file)->
@@ -19,8 +20,7 @@ class YamlDb
       exist = k of @dict
       if exist
         old = @dict[k]
-        if old != v
-          w = true
+        w = isEqual old,v
       else
         w = true
       if w
@@ -37,7 +37,7 @@ class YamlDb
       fs.outputFileSync @file, yaml.dump(@dict)
     return write
 
-module.exports = (file)->
+export default (file)->
   new YamlDb(file+".yml")
 
 # not module.parent and do =>
